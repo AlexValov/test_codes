@@ -13,44 +13,9 @@
 	<link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
 </head>
 <body>
-    <div class="wrapper">
-        <div class="content">
-            <h1>Заголовок первого уровня</h1>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="{% static 'images/main_1.jpg' %}" alt="Первая картинка"></div>
-                    <div class="swiper-slide"><img src="{% static 'images/main_2.jpg' %}" alt="Вторая картинка"></div>
-                    <div class="swiper-slide"><img src="{% static 'images/main_3.jpg' %}" alt="Третья картинка"></div>
-                    <div class="swiper-slide"><img src="{% static 'images/main_4.jpg' %}" alt="Четвертая картинка"></div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-            <div class="intro-text">
-                <p>По мнению учёных, Земля образовалась 4,54 млрд лет назад из межзвёздного газопылевого облака, наряду с Солнцем и другими планетами. Луна сформировалась примерно на 20 млн лет позже в результате столкновения массивного тела с Землёй. Расплавленный наружный слой Земли со временем охлаждался, в результате чего сформировалась твёрдая оболочка — кора.</p>
-                <p>Выделение газов и вулканическая активность привели к возникновению первичной атмосферы. Конденсация водяного пара (большинство которого образовалось изо льда комет) привела к возникновению океанов и других водных ресурсов, после чего высокоэнергетическая химия привела к возникновению самовоспроизводящейся молекулы около 4 млрд лет назад.</p>
-                <p>Поверхность Земли менялась на протяжении сотен миллионов лет, время от времени объединяясь в суперконтинент, а затем снова распадаясь на отдельные континенты. Примерно 750 млн лет назад начал разделяться самый древний из известных суперконтинентов — Родиния. Через некоторое время континенты снова соединились и сформировали Паннотию, которая разъединилась около 540 млн лет назад.
-                <p>Затем образовался последний суперконтинент — Пангея, который разделился около 180 млн лет назад.</p>
-            </div>
-            <div class="products-list">
-                <h2>Продукты</h2>
-                <ul>
-                    <li><a href="product.html">Продукт 1</a></li>
-                    <li><a href="product.html">Продукт 2</a></li>
-                    <li><a href="product.html">Продукт 3</a></li>
-                    <li><a href="product.html">Продукт 4</a></li>
-                    <li><a href="product.html">Продукт 5</a></li>
-                </ul>
-            </div>
-            <div id="map" data-latitude="55.76" data-longitude="37.64"></div>
-            <h2>Отправить сообщение</h2>
-            <form id="form">
-                <input type="text" placeholder="Ваше имя" class="text-box" id="name" onfocus="blurEvent(this)" onkeyup="onChangeEvent(this)">
-                <input type="text" placeholder="Электронная почта" class="text-box" id="email" onfocus="blurEvent(this)" onkeyup="onChangeEvent(this)">
-                <input type="submit" value="Отправить" class="button" onclick="event.preventDefault();onSubmitEvent()">
-            </form>
-        </div>
-    </div>
+    {% block content %}
+
+    {% endblock %}
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=28ba27e6-8179-45dd-8a90-a542e1883e67" type="text/javascript"></script>
 	<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
 	<script src="{% static 'js/main.js' %}"></script>
