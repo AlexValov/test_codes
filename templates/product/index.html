@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="content">
+        <h1>{{ home_page_data.title }}</h1>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for slide in home_page_data.get_img_for_slider %}
+                    <div class="swiper-slide"><img src="{{ slide.image.url }}" alt="{{ slide.name }}"></div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="intro-text">
+            {% for slide in home_page_data.get_paragraph_for_description %}
+                <p>{{ slide.text }}</p>
+            {% endfor %}
+        </div>
+        <div class="products-list">
+            <h2>Продукты</h2>
+            <ul>
+                {% for product in product_list%}
+                    <li><a href="{% url 'product_detail' product.slug %}">{{ product.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- <div id="map" data-latitude="55.76" data-longitude="37.64"></div> -->
+        <div id="map" data-latitude="{{ home_page_data.data_latitude }}" data-longitude="{{ home_page_data.data_longitude }}"></div>
+
+        <h2>Отправить сообщение</h2>
+        <form id="form">
+            <input type="text" placeholder="Ваше имя" class="text-box" id="name" onfocus="blurEvent(this)" onkeyup="onChangeEvent(this)">
+            <input type="text" placeholder="Электронная почта" class="text-box" id="email" onfocus="blurEvent(this)" onkeyup="onChangeEvent(this)">
+            <input type="submit" value="Отправить" class="button" onclick="event.preventDefault();onSubmitEvent()">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
